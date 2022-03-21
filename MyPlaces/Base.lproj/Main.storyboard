@@ -180,7 +180,7 @@
                                                         <backgroundConfiguration key="background" image="map"/>
                                                     </buttonConfiguration>
                                                     <connections>
-                                                        <segue destination="hvc-gN-sKy" kind="presentation" identifier="ShowMap" modalPresentationStyle="fullScreen" id="4xI-M5-J7i"/>
+                                                        <segue destination="hvc-gN-sKy" kind="presentation" identifier="showMap" modalPresentationStyle="fullScreen" id="4xI-M5-J7i"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -432,14 +432,6 @@
             <point key="canvasLocation" x="1525" y="-725"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="IZJ-bi-nY4">
-            <size key="intrinsicContentSize" width="252" height="44"/>
-        </designable>
-        <designable name="sO3-6i-D6g">
-            <size key="intrinsicContentSize" width="90" height="14"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="KPV-cQ-EAd"/>
     </inferredMetricsTieBreakers>
