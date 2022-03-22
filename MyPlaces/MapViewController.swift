@@ -7,11 +7,13 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     
-    var place: Place!
-let annotationIdentifier = "annotationIdentifier"
+    var place = Place()
+    let annotationIdentifier = "annotationIdentifier"
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -19,6 +21,7 @@ let annotationIdentifier = "annotationIdentifier"
         super.viewDidLoad()
         mapView.delegate = self
         setupPlacemark()
+        checkLocationServices()
     }
     
 
@@ -56,6 +59,44 @@ let annotationIdentifier = "annotationIdentifier"
         }
                 
     }
+
+    private func checkLocationServices() {
+        
+        if CLLocationManager.locationServicesEnabled() {
+            setupLocationManager()
+            checkLocationAuthorization()
+        } else {
+            // Show alert controller
+
+        }
+    }
+    
+    private func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    }
+
+    private func checkLocationAuthorization() {
+        switch CLLocationManager.authorizationStatus() {
+        case .authorizedWhenInUse:
+            mapView.showsUserLocation = true
+            break
+        case .denied:
+            // Show alert controller
+            break
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            // Show alert controller
+            break
+        case .authorizedAlways:
+            break
+        @unknown default:
+            print("new case is avalable")
+            
+        }
+    }
+    
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -84,4 +125,11 @@ extension MapViewController: MKMapViewDelegate {
         return annotationView
     }
     
+}
+
+extension MapViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
+    }
 }
