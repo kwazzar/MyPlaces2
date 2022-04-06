@@ -265,7 +265,7 @@
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="Placeholder"/>
                                                     <connections>
-                                                        <segue destination="hvc-gN-sKy" kind="presentation" identifier="getAdress" modalPresentationStyle="fullScreen" id="7K4-uz-ItD"/>
+                                                        <segue destination="hvc-gN-sKy" kind="presentation" identifier="getAddress" modalPresentationStyle="fullScreen" id="7K4-uz-ItD"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -448,7 +448,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adressLabel" destination="0pc-fe-7dH" id="boS-V9-Hzr"/>
+                        <outlet property="addressLabel" destination="0pc-fe-7dH" id="boS-V9-Hzr"/>
                         <outlet property="doneButton" destination="SIz-sv-R7T" id="nXS-gA-637"/>
                         <outlet property="mapPinImage" destination="mot-1b-TlA" id="JGz-ot-fIf"/>
                         <outlet property="mapView" destination="NyQ-61-jJX" id="LjG-dC-PwR"/>
@@ -505,7 +505,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="4xI-M5-J7i"/>
+        <segue reference="7K4-uz-ItD"/>
         <segue reference="KPV-cQ-EAd"/>
     </inferredMetricsTieBreakers>
     <resources>
