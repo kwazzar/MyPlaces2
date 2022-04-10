@@ -426,6 +426,19 @@
                                     <action selector="centerViewInUserLocation" destination="hvc-gN-sKy" eventType="touchUpInside" id="TQg-Dz-fim"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrX-C7-Q7G">
+                                <rect key="frame" x="170" y="720" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="RJH-fI-fSN"/>
+                                    <constraint firstAttribute="width" constant="50" id="Zmy-1c-pJY"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button" image="GetDirection"/>
+                                <buttonConfiguration key="configuration" style="plain" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="hvc-gN-sKy" eventType="touchUpInside" id="olc-VT-wiG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="51f-ww-Rph"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -438,9 +451,11 @@
                             <constraint firstItem="NyQ-61-jJX" firstAttribute="top" secondItem="0pc-fe-7dH" secondAttribute="bottom" constant="-191" id="JRi-CG-wbD"/>
                             <constraint firstItem="51f-ww-Rph" firstAttribute="trailing" secondItem="0pc-fe-7dH" secondAttribute="trailing" constant="16" id="Jbs-yv-tgj"/>
                             <constraint firstItem="0pc-fe-7dH" firstAttribute="leading" secondItem="51f-ww-Rph" secondAttribute="leading" constant="16" id="X3P-3f-Nxl"/>
+                            <constraint firstItem="51f-ww-Rph" firstAttribute="bottom" secondItem="RrX-C7-Q7G" secondAttribute="bottom" constant="40" id="Zoh-LB-QBY"/>
                             <constraint firstItem="NyQ-61-jJX" firstAttribute="top" secondItem="BZc-Sa-tbq" secondAttribute="top" id="bZS-8X-zv3"/>
                             <constraint firstItem="mot-1b-TlA" firstAttribute="centerY" secondItem="BZc-Sa-tbq" secondAttribute="centerY" constant="-20" id="c69-Ns-35l"/>
                             <constraint firstItem="NyQ-61-jJX" firstAttribute="trailing" secondItem="51f-ww-Rph" secondAttribute="trailing" id="nJF-7K-OFS"/>
+                            <constraint firstItem="RrX-C7-Q7G" firstAttribute="centerX" secondItem="BZc-Sa-tbq" secondAttribute="centerX" id="qz5-lR-lnt"/>
                             <constraint firstItem="51f-ww-Rph" firstAttribute="bottom" secondItem="SIz-sv-R7T" secondAttribute="bottom" constant="40" id="rJh-eF-n28"/>
                             <constraint firstItem="51f-ww-Rph" firstAttribute="trailing" secondItem="K7H-OQ-lT7" secondAttribute="trailing" constant="40" id="sYo-LX-PPS"/>
                             <constraint firstItem="51f-ww-Rph" firstAttribute="trailing" secondItem="8e2-2m-gTm" secondAttribute="trailing" constant="40" id="uIc-ND-2hW"/>
@@ -450,6 +465,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="0pc-fe-7dH" id="boS-V9-Hzr"/>
                         <outlet property="doneButton" destination="SIz-sv-R7T" id="nXS-gA-637"/>
+                        <outlet property="goButton" destination="RrX-C7-Q7G" id="aey-T9-La3"/>
                         <outlet property="mapPinImage" destination="mot-1b-TlA" id="JGz-ot-fIf"/>
                         <outlet property="mapView" destination="NyQ-61-jJX" id="LjG-dC-PwR"/>
                     </connections>
@@ -510,6 +526,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Location" width="128" height="128"/>
         <image name="Photo" width="194.66667175292969" height="195.66667175292969"/>
         <image name="Pin" width="40" height="40"/>
